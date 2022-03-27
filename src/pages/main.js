@@ -1,7 +1,7 @@
 import React from "react";
-import SwicherLight from "../components/swicherLight++";
+import Joks from "../components/joksFunc.js";
 
 const main = () => {
-  return <SwicherLight />;
+  return <Joks />;
 };
 export default main;
