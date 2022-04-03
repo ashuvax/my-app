@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Jok from "./jok";
+import Loading from "./loadingClass";
 export default class joks extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,7 @@ export default class joks extends Component {
             error,
           });
         }
-      );
+    );
   }
 
   render() {
@@ -33,7 +34,7 @@ export default class joks extends Component {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <Loading />;
     } else {
       return (
         <div>

@@ -1,7 +1,8 @@
 import React from "react";
-import Joks from "../components/joksFunc.js";
+// import Joks from "../components/joksFunc";
+import Todos from "../components/Todos";
 
 const main = () => {
-  return <Joks />;
+  return <Todos />;
 };
 export default main;

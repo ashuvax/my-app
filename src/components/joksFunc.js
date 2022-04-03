@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Jok from "./jok";
-
+import Loading from "./loadingFunc";
 const JoksFunc = (props) => {
-
-const [error, setError] = useState(null);
-const [isLoaded, setIsLoaded] = useState(false);
-const [items, setItems] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+  const [val , setVal] = useState('');
 
   useEffect(() => {
     fetch("https://api.publicapis.org/entries")
@@ -25,10 +25,19 @@ const [items, setItems] = useState([]);
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <Loading />;
   } else {
     return (
       <div>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          console.log(e);
+        }}>
+          <input type="text" name="search" placeholder="Search..." />
+          <button type="submit">Search</button>
+        </form>
+
+        <input value={setVal()} onChange={(event) => console.log(val)} />
         {items.map((item) => (
           <Jok {...item} />
         ))}

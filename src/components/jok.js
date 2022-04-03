@@ -1,7 +1,7 @@
 import React from "react";
 import "./jok.css";
 const jok = (props) => {
-  const { API, Link, Description } = props;
+  const { API, Link, Description} = props;
   return (
     <div className="jok">
       api: {API}
